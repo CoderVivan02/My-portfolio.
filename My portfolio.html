@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivan Shetty - Personal Portfolio</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            background: linear-gradient(45deg, #000428, #004e92); 
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header { 
+            background-color: #FFD700; 
+            color: black; 
+            text-align: center; 
+            padding: 40px; 
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .profile-pic {
+            width: 200px; 
+            height: 200px; 
+            border-radius: 50%; 
+            border: 4px solid #FFD700; 
+            margin-top: 10px;
+            object-fit: cover; 
+        }
+        nav { 
+            display: flex; 
+            justify-content: center; 
+            background-color: #222; 
+            transition: background-color 0.3s ease;
+        }
+        nav a { 
+            color: white; 
+            padding: 14px 20px; 
+            text-decoration: none; 
+            transition: background 0.3s ease;
+            font-size: 1.2rem;
+        }
+        nav a:hover { 
+            background-color: #FFD700; 
+            color: #222;
+        }
+        section { 
+            background-color: #222;
+            padding: 30px; 
+            margin: 20px auto; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+            max-width: 900px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            display: none; /* Hide all sections initially */
+        }
+        section.active {
+            display: block; /* Show active section */
+        }
+        section:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .education-card {
+            background-color: #FFD700;
+            color: black;
+            border-left: 6px solid #2E7D32;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+        h2 { 
+            color: #FFD700; 
+            text-transform: uppercase;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        footer { 
+            background-color: #FFD700; 
+            color: black; 
+            text-align: center; 
+            padding: 10px 0; 
+        }
+        a { 
+            color: #FFD700; 
+            text-decoration: none;
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Desktop-specific styles */
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 100;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            }
+            nav a {
+                font-size: 1.5rem;
+            }
+            section {
+                width: 80%;
+                height: 100vh;
+                display: none;
+                padding: 50px 20px;
+                margin: 0;
+            }
+            section.active {
+                display: block;
+            }
+        }
+
+        /* Form styling */
+        form {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #444;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: #FFD700;
+            color: black;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #2E7D32;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hello I AM VIVAN!!</h1>
+        <img src="https://i.ibb.co/R4ZJ9JS4/1742915860556.jpg" alt="Vivan Shetty's Profile Picture" class="profile-pic">
+        <p>Computer Engineering Student at Fr Conceicao Rodrigues College Of Engineering</p>
+    </header>
+
+    <nav>
+        <a href="#" data-target="about">About Me</a>
+        <a href="#" data-target="education">Education</a>
+        <a href="#" data-target="hobbies">Hobbies</a>
+        <a href="#" data-target="goals">Future Goals</a>
+        <a href="#" data-target="hackathons">Hackathons</a>
+        <a href="#" data-target="projects">Past Projects</a>
+        <a href="#" data-target="contact">Contact</a>
+    </nav>
+
+    <section id="about" class="active">
+        <h2>About Me</h2>
+        <p>Hi, I'm Vivan Shetty, an enthusiastic engineering student passionate about web development and innovative tech solutions. Currently pursuing my engineering degree, I'm dedicated to mastering web technologies, from front-end design to back-end development.
+            I actively participate in hackathons, leveraging my technical skills to build creative and impactful projects. These experiences have honed my problem-solving abilities and teamwork skills, preparing me for real-world challenges.
+            Beyond academics, I enjoy exploring new tech trends, improving my coding skills, and brainstorming ideas for my upcoming financial planning startup.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-card">
+            <h3>Secondary School</h3>
+            <p>Class 1-10</p>
+            <p>Institution: Rustomjee International School</p>
+            <p>Duration: 2012 - 2022</p>
+        </div>
+        <div class="education-card">
+            <h3>High Secondary School</h3>
+            <p>Institution: St Rocks Jr College (Integrated College)</p>
+            <p>Graduated: 2022-2024</p>
+        </div>
+        <div class="education-card">
+            <h3>BTech in Computer Engineering</h3>
+            <p>Institution: Fr Conceicao Rodrigues College of Engineering</p>
+            <p>Graduated: 2024-2028 (to be graduated)</p>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Coding and exploring new languages</li>
+            <li>Playing cricket, badminton, and strategy games</li>
+            <li>Traveling and photography</li>
+            <li>Hiking and exploring nature for relaxation and inspiration</li>
+            <li>Reading about financial planning and investment strategies</li>
+            <li>Participating in hackathons</li>
+        </ul>
+    </section>
+
+    <section id="goals">
+        <h2>Future Goals</h2>
+        <p>My goal is to master web development and successfully launch my financial planning startup that helps people achieve their financial objectives. I also plan to use engineering skills to solve societal problems such as environmental challenges, healthcare improvements, or infrastructure development. Additionally, I want to participate in social impact projects, collaborate with NGOs, or work on sustainable technologies. Starting an engineering-related startup or contributing to innovative solutions that address industry challenges is also a key aspiration for me.</p>
+    </section>
+
+    <section id="hackathons">
+        <h2>Hackathons Participated</h2>
+        <ul>
+            <li><strong>Built&Build Hackathon</strong> - Queue System Management</li>
+            <li><strong>Code Craft Hackathon</strong> - Maid App</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Past Projects</h2>
+        <ul>
+            <li>
+                <strong>Maid App:</strong> A mobile app for booking domestic helpers and managing schedules.
+                <br>
+                <img src="https://via.placeholder.com/150" alt="Maid App" style="width: 150px; border-radius: 10px; margin-top: 10px;">
+                <br>
+                <a href="https://github.com/yourusername/maid-app" target="_blank">View on GitHub</a>
+                <a href="https://ibb.co/24sr64y"><img src="https://i.ibb.co/zv7g5vr/1742920468149.jpg" alt="1742920468149" border="0"></a>
+                <br><br>
+                <p>Check out the prototype for the Maid App on Figma to explore the app's design and user experience. You can view the full prototype and interact with the app's features by clicking the link below:</p>
+                <a href="https://www.figma.com/design/WvzTQgf9F2b8kgzyPfJTLW?node-id=0-1" target="_blank" style="color: #FFD700;">View Prototype on Figma</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: vivanshetty@example.com</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/vivanshetty</a></p>
+        <p>GitHub: <a href="https://github.com/CoderVivan02" target="_blank">github.com/vivanshetty</a></p>
+        <p>Instagram: <a href="https://instagram.com/vivanshetty" target="_blank">instagram.com/vivanshetty</a></p>
+
+        <!-- Contact Form -->
+        <form action="#" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <footer>
+        <p>Created by Vivan Shetty &copy; 2025</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                const target = this.getAttribute('data-target');
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
